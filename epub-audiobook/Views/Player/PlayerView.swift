@@ -7,6 +7,7 @@ struct PlayerView: View {
     let coordinator: PlaybackCoordinator
 
     @Environment(\.dismiss) private var dismiss
+    @State private var showingChapters = false
 
     var body: some View {
         NavigationStack {
@@ -38,6 +39,20 @@ struct PlayerView: View {
                     Button("Done") {
                         dismiss()
                     }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showingChapters = true
+                    } label: {
+                        Image(systemName: "list.bullet")
+                    }
+                }
+            }
+            .sheet(isPresented: $showingChapters) {
+                if let chapter = coordinator.currentChapter,
+                   let book = chapter.book,
+                   let chapters = book.chapters?.sorted(by: { $0.spineIndex < $1.spineIndex }) {
+                    ChapterListView(coordinator: coordinator, chapters: chapters)
                 }
             }
         }
