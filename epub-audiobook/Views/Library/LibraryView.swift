@@ -19,6 +19,7 @@ struct LibraryView: View {
     @State private var showingSettings = false
     @State private var showingResumePrompt = false
     @State private var resumeBook: Book?
+    @State private var pendingImportURL: URL?
 
     private let columns = [
         GridItem(.adaptive(minimum: 150, maximum: 200), spacing: 16)
@@ -117,6 +118,14 @@ struct LibraryView: View {
             .onAppear {
                 checkForResume()
             }
+            .onOpenURL { url in
+                importFromURL(url)
+            }
+            .onChange(of: pendingImportURL) { _, url in
+                guard let url else { return }
+                pendingImportURL = nil
+                importFromURL(url)
+            }
         }
     }
 
@@ -188,6 +197,22 @@ struct LibraryView: View {
 
         resumeBook = book
         showingResumePrompt = true
+    }
+
+    private func importFromURL(_ url: URL) {
+        guard url.pathExtension.lowercased() == "epub" else { return }
+        isImporting = true
+        Task {
+            do {
+                let service = BookImportService(modelContext: modelContext)
+                let book = try await service.importBook(from: url)
+                openBook(book)
+            } catch {
+                importError = error.localizedDescription
+                showingError = true
+            }
+            isImporting = false
+        }
     }
 
     private func deleteBook(_ book: Book) {

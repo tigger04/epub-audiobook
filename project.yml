@@ -21,15 +21,27 @@ targets:
     platform: iOS
     sources:
       - path: epub-audiobook
+    info:
+      path: epub-audiobook/Info.plist
+      properties:
+        UIBackgroundModes:
+          - audio
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+        CFBundleDocumentTypes:
+          - CFBundleTypeName: EPUB Document
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Alternate
+            LSItemContentTypes:
+              - org.idpf.epub-container
     settings:
       base:
-        INFOPLIST_GENERATION_MODE: GeneratedFile
         MARKETING_VERSION: "0.1.0"
         CURRENT_PROJECT_VERSION: "1"
-        GENERATE_INFOPLIST_FILE: "YES"
         SWIFT_VERSION: "6.0"
         PRODUCT_BUNDLE_IDENTIFIER: com.tigoss.epub-audiobook
-        INFOPLIST_KEY_UIBackgroundModes: audio
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: J2AM5AANLB
     dependencies:
       - package: ZIPFoundation
 

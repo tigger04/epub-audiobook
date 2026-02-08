@@ -5,7 +5,7 @@ SCHEME := epub-audiobook
 PROJECT := epub-audiobook.xcodeproj
 DESTINATION := platform=iOS Simulator,arch=arm64,name=iPhone 15 Pro,OS=17.5
 
-.PHONY: build test test-ui test-all clean release sync help
+.PHONY: build device test test-ui test-all clean release sync help
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -16,6 +16,14 @@ build: ## Build the project
 		-project "$(PROJECT)" \
 		-scheme "$(SCHEME)" \
 		-destination "$(DESTINATION)" \
+		-quiet
+
+device: ## Build and install on connected iPhone
+	xcodebuild build \
+		-project "$(PROJECT)" \
+		-scheme "$(SCHEME)" \
+		-destination "generic/platform=iOS" \
+		-allowProvisioningUpdates \
 		-quiet
 
 test: ## Run unit and integration tests

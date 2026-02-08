@@ -104,6 +104,7 @@
 		90C28479E62298A94B95CF8A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		921D9FADBAFEE611F4340D65 /* BookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
 		9BA41DE08D3E3C4D791FA81E /* SleepTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimerView.swift; sourceTree = "<group>"; };
+		9E65964C5D4E20E95AC4A941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A062D5B22CC9DD3DED16B1D6 /* HighlightedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedTextView.swift; sourceTree = "<group>"; };
 		A19BE7FFA74921C7A2331BA3 /* epub-audiobook-uitests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "epub-audiobook-uitests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B572F52A945B7F4032102D /* SystemTTSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTTSEngine.swift; sourceTree = "<group>"; };
@@ -232,6 +233,7 @@
 		491145D14E92F288778EFCCA /* epub-audiobook */ = {
 			isa = PBXGroup;
 			children = (
+				9E65964C5D4E20E95AC4A941 /* Info.plist */,
 				DF4AB5071108D4288A375210 /* App */,
 				82240FD8727EAE7B4C157000 /* EPUBParser */,
 				EAED8A2B7C624BEE7EE736EF /* Models */,
@@ -419,6 +421,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					1CA9CEC40927D68ADE9F1136 = {
+						DevelopmentTeam = J2AM5AANLB;
+						ProvisioningStyle = Automatic;
+					};
 					9F4F547C7EEBF7E3BD48025A = {
 						TestTargetID = 1CA9CEC40927D68ADE9F1136;
 					};
@@ -655,10 +661,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_GENERATION_MODE = GeneratedFile;
-				INFOPLIST_KEY_UIBackgroundModes = audio;
+				DEVELOPMENT_TEAM = J2AM5AANLB;
+				INFOPLIST_FILE = "epub-audiobook/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -730,10 +736,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_GENERATION_MODE = GeneratedFile;
-				INFOPLIST_KEY_UIBackgroundModes = audio;
+				DEVELOPMENT_TEAM = J2AM5AANLB;
+				INFOPLIST_FILE = "epub-audiobook/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
