@@ -10,6 +10,8 @@ struct PlayerView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var showingChapters = false
     @State private var showingBookmarks = false
+    @State private var showingSleepTimer = false
+    @State private var sleepTimerService: SleepTimerService?
 
     var body: some View {
         NavigationStack {
@@ -31,6 +33,12 @@ struct PlayerView: View {
 
                 SpeedControlView(coordinator: coordinator)
 
+                if let sleepTimerService, sleepTimerService.isActive {
+                    Text("Sleep: \(sleepTimerService.formattedRemaining)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
                 Spacer()
             }
             .padding()
@@ -45,6 +53,11 @@ struct PlayerView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     HStack {
                         Button {
+                            showingSleepTimer = true
+                        } label: {
+                            Image(systemName: "moon.zzz")
+                        }
+                        Button {
                             showingBookmarks = true
                         } label: {
                             Image(systemName: "bookmark")
@@ -55,6 +68,16 @@ struct PlayerView: View {
                             Image(systemName: "list.bullet")
                         }
                     }
+                }
+            }
+            .onAppear {
+                if sleepTimerService == nil {
+                    sleepTimerService = SleepTimerService(coordinator: coordinator)
+                }
+            }
+            .sheet(isPresented: $showingSleepTimer) {
+                if let sleepTimerService {
+                    SleepTimerView(timerService: sleepTimerService)
                 }
             }
             .sheet(isPresented: $showingChapters) {

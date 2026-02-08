@@ -33,7 +33,9 @@
 		6E082CE84A10DEE9845D91C6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C28479E62298A94B95CF8A /* SettingsView.swift */; };
 		746DA7D42DCD267AF677B520 /* PlaybackCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946D1C0AA712B0A617B0E68 /* PlaybackCoordinatorTests.swift */; };
 		76A8D9B6C96F21C1FB61C314 /* BookImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663ABCF42DD0A0D248EDE766 /* BookImportService.swift */; };
+		8E30E7E84ABBD54840A9EE82 /* SleepTimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53875EF63107C080452D8A5 /* SleepTimerService.swift */; };
 		A6C28E88360A9B74B50464B8 /* MockTTSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BAFF40F6F2667453458DFE /* MockTTSEngine.swift */; };
+		AF403FEBF3478BD9275E7197 /* SleepTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA41DE08D3E3C4D791FA81E /* SleepTimerView.swift */; };
 		AFEF955872958C85B8BD1920 /* ChapterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99371503578B5F0DBDAC78 /* ChapterListView.swift */; };
 		B321831F42FB3BD7B82DF610 /* OPFParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA75388DDC7456CBF64C9F /* OPFParserTests.swift */; };
 		B9937B4088C0BE75899F7E33 /* MockTTSEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6ED68EA284A630A2506A7 /* MockTTSEngineTests.swift */; };
@@ -47,6 +49,7 @@
 		CD8E66AB72009273CB2CE5CF /* EpubAudiobookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48264C4082D04B62511FD22F /* EpubAudiobookTests.swift */; };
 		D5A36D05D51A80C1C14BDC72 /* SchemaV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155F7735C44C010D2BA4DD35 /* SchemaV1.swift */; };
 		D68493FD1519A06CC5634F63 /* BookmarkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83E0D5DA6DA91DE1A798041 /* BookmarkServiceTests.swift */; };
+		D71BD781B6C15D92CBE39D95 /* SleepTimerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5967A438F08B73EE61C6F79 /* SleepTimerServiceTests.swift */; };
 		E0D87D455E141588D54734FC /* EpubAudiobookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF3B4649DC79C9BADF5EE1 /* EpubAudiobookApp.swift */; };
 		E3848B6B8517670CF1CA8F91 /* EpubAudiobookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A40164C8545C84642507FA /* EpubAudiobookUITests.swift */; };
 		FCF6A418D8DD74EACF5870A1 /* SystemTTSEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A630F6BBE4EBA5E43C64B /* SystemTTSEngineTests.swift */; };
@@ -99,6 +102,7 @@
 		8A99371503578B5F0DBDAC78 /* ChapterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListView.swift; sourceTree = "<group>"; };
 		90C28479E62298A94B95CF8A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		921D9FADBAFEE611F4340D65 /* BookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
+		9BA41DE08D3E3C4D791FA81E /* SleepTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimerView.swift; sourceTree = "<group>"; };
 		A19BE7FFA74921C7A2331BA3 /* epub-audiobook-uitests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "epub-audiobook-uitests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B572F52A945B7F4032102D /* SystemTTSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTTSEngine.swift; sourceTree = "<group>"; };
 		A8D81A66A9FB7865F503E664 /* epub-audiobook.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "epub-audiobook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,8 +112,10 @@
 		C83E0D5DA6DA91DE1A798041 /* BookmarkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkServiceTests.swift; sourceTree = "<group>"; };
 		CD55B9B3FCC1556BEE5E6DEC /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		D3F4543C6A47EA0081FF1883 /* EPUBParserIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBParserIntegrationTests.swift; sourceTree = "<group>"; };
+		D5967A438F08B73EE61C6F79 /* SleepTimerServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimerServiceTests.swift; sourceTree = "<group>"; };
 		DA20B3E600DC2024D14B5C79 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		DF24E16EC9736DA742B42FD3 /* ContainerParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerParserTests.swift; sourceTree = "<group>"; };
+		E53875EF63107C080452D8A5 /* SleepTimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimerService.swift; sourceTree = "<group>"; };
 		F5116056217C689187A4FD69 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		FB39394A3AA6ECF922C5A210 /* TOCParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCParser.swift; sourceTree = "<group>"; };
 		FD83D6F2E97A22A55E92519B /* BookmarkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRowView.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 				6BFCF23B8C2C737C54C29625 /* BookImportServiceTests.swift */,
 				C83E0D5DA6DA91DE1A798041 /* BookmarkServiceTests.swift */,
 				5946D1C0AA712B0A617B0E68 /* PlaybackCoordinatorTests.swift */,
+				D5967A438F08B73EE61C6F79 /* SleepTimerServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -174,6 +181,7 @@
 				8A99371503578B5F0DBDAC78 /* ChapterListView.swift */,
 				36C3D4AFA9DDC5E9B142C4A2 /* PlaybackControlsView.swift */,
 				042C77862169B1E1E8F9E2F6 /* PlayerView.swift */,
+				9BA41DE08D3E3C4D791FA81E /* SleepTimerView.swift */,
 				57863A337D88B872647804A8 /* SpeedControlView.swift */,
 			);
 			path = Player;
@@ -195,6 +203,7 @@
 				3D794F40A835100B860B9E4D /* BookmarkService.swift */,
 				4730C7FF441A7A0622BAD2F1 /* NowPlayingService.swift */,
 				85E379FB2B4ABF19B562B4A9 /* PlaybackCoordinator.swift */,
+				E53875EF63107C080452D8A5 /* SleepTimerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -458,6 +467,7 @@
 				B9937B4088C0BE75899F7E33 /* MockTTSEngineTests.swift in Sources */,
 				B321831F42FB3BD7B82DF610 /* OPFParserTests.swift in Sources */,
 				746DA7D42DCD267AF677B520 /* PlaybackCoordinatorTests.swift in Sources */,
+				D71BD781B6C15D92CBE39D95 /* SleepTimerServiceTests.swift in Sources */,
 				FCF6A418D8DD74EACF5870A1 /* SystemTTSEngineTests.swift in Sources */,
 				4F5C4DDE24A2A14E5EDE103C /* TOCParserTests.swift in Sources */,
 				34C64330D13C29C13AAA51B0 /* XHTMLTextExtractorTests.swift in Sources */,
@@ -491,6 +501,8 @@
 				4039071F6DE8161F5826182D /* ReadingPosition.swift in Sources */,
 				D5A36D05D51A80C1C14BDC72 /* SchemaV1.swift in Sources */,
 				6E082CE84A10DEE9845D91C6 /* SettingsView.swift in Sources */,
+				8E30E7E84ABBD54840A9EE82 /* SleepTimerService.swift in Sources */,
+				AF403FEBF3478BD9275E7197 /* SleepTimerView.swift in Sources */,
 				BC7A9EA5A3805B4B58625833 /* SpeedControlView.swift in Sources */,
 				CC6288AF598EF3C0132F352F /* SystemTTSEngine.swift in Sources */,
 				3760C835AEDA0B7E3AD41BE9 /* TOCParser.swift in Sources */,
