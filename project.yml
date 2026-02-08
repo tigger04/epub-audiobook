@@ -1,0 +1,78 @@
+# ABOUTME: XcodeGen project specification for epub-audiobook.
+# ABOUTME: Generates epub-audiobook.xcodeproj with app, test, and UI test targets.
+
+name: epub-audiobook
+options:
+  bundleIdPrefix: com.tigoss
+  deploymentTarget:
+    iOS: "17.4"
+  xcodeVersion: "16.2"
+  createIntermediateGroups: true
+  defaultConfig: Debug
+
+packages:
+  ZIPFoundation:
+    url: https://github.com/weichsel/ZIPFoundation
+    from: "0.9.19"
+
+targets:
+  epub-audiobook:
+    type: application
+    platform: iOS
+    sources:
+      - path: epub-audiobook
+    settings:
+      base:
+        INFOPLIST_GENERATION_MODE: GeneratedFile
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: "YES"
+        SWIFT_VERSION: "6.0"
+        PRODUCT_BUNDLE_IDENTIFIER: com.tigoss.epub-audiobook
+    dependencies:
+      - package: ZIPFoundation
+
+  epub-audiobook-tests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: epub-audiobook-tests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: "YES"
+        SWIFT_VERSION: "6.0"
+    dependencies:
+      - target: epub-audiobook
+
+  epub-audiobook-uitests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: epub-audiobook-uitests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: "YES"
+        SWIFT_VERSION: "6.0"
+    dependencies:
+      - target: epub-audiobook
+
+schemes:
+  epub-audiobook:
+    build:
+      targets:
+        epub-audiobook: all
+        epub-audiobook-tests: [test]
+        epub-audiobook-uitests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - epub-audiobook-tests
+        - epub-audiobook-uitests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

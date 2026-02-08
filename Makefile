@@ -2,9 +2,8 @@
 # ABOUTME: Wraps xcodebuild for standard make targets
 
 SCHEME := epub-audiobook
-PROJECT := epub-audiobook/epub-audiobook.xcodeproj
-DESTINATION := platform=iOS Simulator,name=iPhone 16,OS=latest
-VERSION_FILE := epub-audiobook/epub-audiobook/Info.plist
+PROJECT := epub-audiobook.xcodeproj
+DESTINATION := platform=iOS Simulator,arch=arm64,name=iPhone 15 Pro,OS=17.5
 
 .PHONY: build test test-ui test-all clean release sync help
 
@@ -29,8 +28,9 @@ test: ## Run unit and integration tests
 test-ui: ## Run UI/E2E tests
 	xcodebuild test \
 		-project "$(PROJECT)" \
-		-scheme "epub-audiobook-uitests" \
+		-scheme "$(SCHEME)" \
 		-destination "$(DESTINATION)" \
+		-only-testing:epub-audiobook-uitests \
 		-quiet
 
 test-all: test test-ui ## Run all tests
@@ -39,6 +39,7 @@ clean: ## Clean build artefacts
 	xcodebuild clean \
 		-project "$(PROJECT)" \
 		-scheme "$(SCHEME)" \
+		-destination "$(DESTINATION)" \
 		-quiet
 	rm -rf DerivedData build
 
