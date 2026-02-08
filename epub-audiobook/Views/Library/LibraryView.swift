@@ -16,6 +16,7 @@ struct LibraryView: View {
     @State private var showingError = false
 
     @State private var coordinator: PlaybackCoordinator?
+    @State private var showingSettings = false
 
     private let columns = [
         GridItem(.adaptive(minimum: 150, maximum: 200), spacing: 16)
@@ -53,6 +54,13 @@ struct LibraryView: View {
             }
             .navigationTitle("Library")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        showingSettings = true
+                    } label: {
+                        Image(systemName: "gear")
+                    }
+                }
                 ToolbarItem(placement: .primaryAction) {
                     Button {
                         showingImporter = true
@@ -81,6 +89,9 @@ struct LibraryView: View {
                 if let coordinator {
                     PlayerView(coordinator: coordinator)
                 }
+            }
+            .sheet(isPresented: $showingSettings) {
+                SettingsView()
             }
             .alert("Import Error", isPresented: $showingError) {
                 Button("OK", role: .cancel) { }
