@@ -31,10 +31,12 @@
 		B9CF53F97A010B042BB3EE36 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = AD1B97080E17DEE4A6E54088 /* ZIPFoundation */; };
 		C1479AC6097E63A4E107CFA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B3E600DC2024D14B5C79 /* Book.swift */; };
 		CA6464A45233F906A6D0CE11 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F0969985E043113E89932 /* LibraryView.swift */; };
+		CC6288AF598EF3C0132F352F /* SystemTTSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B572F52A945B7F4032102D /* SystemTTSEngine.swift */; };
 		CD8E66AB72009273CB2CE5CF /* EpubAudiobookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48264C4082D04B62511FD22F /* EpubAudiobookTests.swift */; };
 		D5A36D05D51A80C1C14BDC72 /* SchemaV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155F7735C44C010D2BA4DD35 /* SchemaV1.swift */; };
 		E0D87D455E141588D54734FC /* EpubAudiobookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF3B4649DC79C9BADF5EE1 /* EpubAudiobookApp.swift */; };
 		E3848B6B8517670CF1CA8F91 /* EpubAudiobookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A40164C8545C84642507FA /* EpubAudiobookUITests.swift */; };
+		FCF6A418D8DD74EACF5870A1 /* SystemTTSEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A630F6BBE4EBA5E43C64B /* SystemTTSEngineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +72,11 @@
 		663ABCF42DD0A0D248EDE766 /* BookImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImportService.swift; sourceTree = "<group>"; };
 		6BFCF23B8C2C737C54C29625 /* BookImportServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImportServiceTests.swift; sourceTree = "<group>"; };
 		6F4B3387788E5B2546EB891F /* TTSEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSEngineProtocol.swift; sourceTree = "<group>"; };
+		734A630F6BBE4EBA5E43C64B /* SystemTTSEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTTSEngineTests.swift; sourceTree = "<group>"; };
 		83BAFF40F6F2667453458DFE /* MockTTSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTTSEngine.swift; sourceTree = "<group>"; };
 		921D9FADBAFEE611F4340D65 /* BookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
 		A19BE7FFA74921C7A2331BA3 /* epub-audiobook-uitests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "epub-audiobook-uitests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3B572F52A945B7F4032102D /* SystemTTSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTTSEngine.swift; sourceTree = "<group>"; };
 		A8D81A66A9FB7865F503E664 /* epub-audiobook.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "epub-audiobook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F6ED68EA284A630A2506A7 /* MockTTSEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTTSEngineTests.swift; sourceTree = "<group>"; };
 		BB3356C9905B59B77F24A887 /* EPUBParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBParser.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				83BAFF40F6F2667453458DFE /* MockTTSEngine.swift */,
+				A3B572F52A945B7F4032102D /* SystemTTSEngine.swift */,
 				6F4B3387788E5B2546EB891F /* TTSEngineProtocol.swift */,
 			);
 			path = TTSEngine;
@@ -225,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				A8F6ED68EA284A630A2506A7 /* MockTTSEngineTests.swift */,
+				734A630F6BBE4EBA5E43C64B /* SystemTTSEngineTests.swift */,
 			);
 			path = TTSEngine;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 				CD8E66AB72009273CB2CE5CF /* EpubAudiobookTests.swift in Sources */,
 				B9937B4088C0BE75899F7E33 /* MockTTSEngineTests.swift in Sources */,
 				B321831F42FB3BD7B82DF610 /* OPFParserTests.swift in Sources */,
+				FCF6A418D8DD74EACF5870A1 /* SystemTTSEngineTests.swift in Sources */,
 				4F5C4DDE24A2A14E5EDE103C /* TOCParserTests.swift in Sources */,
 				34C64330D13C29C13AAA51B0 /* XHTMLTextExtractorTests.swift in Sources */,
 			);
@@ -409,6 +416,7 @@
 				1784BA61AE39F8AFDFA5E55F /* OPFParser.swift in Sources */,
 				4039071F6DE8161F5826182D /* ReadingPosition.swift in Sources */,
 				D5A36D05D51A80C1C14BDC72 /* SchemaV1.swift in Sources */,
+				CC6288AF598EF3C0132F352F /* SystemTTSEngine.swift in Sources */,
 				3760C835AEDA0B7E3AD41BE9 /* TOCParser.swift in Sources */,
 				16104F8A9D0F51C2D52F1C3C /* TTSEngineProtocol.swift in Sources */,
 				103E3209D83C7A3BCBD11758 /* XHTMLTextExtractor.swift in Sources */,
