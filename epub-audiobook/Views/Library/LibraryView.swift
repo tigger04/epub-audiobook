@@ -126,6 +126,18 @@ struct LibraryView: View {
         let engine = SystemTTSEngine()
         let playbackCoordinator = PlaybackCoordinator(ttsEngine: engine, modelContext: modelContext)
         playbackCoordinator.loadBook(book)
+
+        let nowPlaying = NowPlayingService(coordinator: playbackCoordinator)
+        nowPlaying.configure()
+        let chapters = (book.chapters ?? []).sorted { $0.spineIndex < $1.spineIndex }
+        nowPlaying.updateNowPlayingInfo(
+            bookTitle: book.title,
+            chapterTitle: chapters.first?.title ?? "Chapter 1",
+            chapterIndex: 0,
+            totalChapters: chapters.count,
+            coverImageData: book.coverImageData
+        )
+
         coordinator = playbackCoordinator
         selectedBook = book
         showingPlayer = true
