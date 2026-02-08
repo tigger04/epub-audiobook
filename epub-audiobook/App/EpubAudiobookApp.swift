@@ -2,6 +2,7 @@
 // ABOUTME: Configures SwiftUI app lifecycle and SwiftData model container.
 
 import SwiftUI
+import SwiftData
 
 @main
 struct EpubAudiobookApp: App {
@@ -9,5 +10,6 @@ struct EpubAudiobookApp: App {
         WindowGroup {
             LibraryView()
         }
+        .modelContainer(for: [Book.self, Chapter.self, ReadingPosition.self, Bookmark.self])
     }
 }

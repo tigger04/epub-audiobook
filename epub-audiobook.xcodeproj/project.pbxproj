@@ -34,6 +34,7 @@
 		B9CF53F97A010B042BB3EE36 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = AD1B97080E17DEE4A6E54088 /* ZIPFoundation */; };
 		BC7A9EA5A3805B4B58625833 /* SpeedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57863A337D88B872647804A8 /* SpeedControlView.swift */; };
 		C1479AC6097E63A4E107CFA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B3E600DC2024D14B5C79 /* Book.swift */; };
+		C160289ACC174EB8E75A5430 /* BookCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFF75CDB5D96772AE86F7B /* BookCardView.swift */; };
 		C9782EB885A7579BA98A2DD5 /* PlaybackControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D4AFA9DDC5E9B142C4A2 /* PlaybackControlsView.swift */; };
 		CA6464A45233F906A6D0CE11 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F0969985E043113E89932 /* LibraryView.swift */; };
 		CC6288AF598EF3C0132F352F /* SystemTTSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B572F52A945B7F4032102D /* SystemTTSEngine.swift */; };
@@ -70,6 +71,7 @@
 		156F0969985E043113E89932 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		18D5EA5C5277F758DC8DEC69 /* XHTMLTextExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHTMLTextExtractorTests.swift; sourceTree = "<group>"; };
 		217937B46904680337F233AE /* XHTMLTextExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHTMLTextExtractor.swift; sourceTree = "<group>"; };
+		2BAFF75CDB5D96772AE86F7B /* BookCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCardView.swift; sourceTree = "<group>"; };
 		36C3D4AFA9DDC5E9B142C4A2 /* PlaybackControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlsView.swift; sourceTree = "<group>"; };
 		37250945424EEEA610FE1906 /* epub-audiobook-tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "epub-audiobook-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		408ECEE95FB20B7BA9AD0E09 /* ContainerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerParser.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		865468B1CB999BF8E218A26E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				2BAFF75CDB5D96772AE86F7B /* BookCardView.swift */,
 				156F0969985E043113E89932 /* LibraryView.swift */,
 			);
 			path = Library;
@@ -428,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1479AC6097E63A4E107CFA5 /* Book.swift in Sources */,
+				C160289ACC174EB8E75A5430 /* BookCardView.swift in Sources */,
 				76A8D9B6C96F21C1FB61C314 /* BookImportService.swift in Sources */,
 				3DA469351D1467832DF7735F /* Bookmark.swift in Sources */,
 				2C49A8B1B16FCD7D9CBE7022 /* Chapter.swift in Sources */,
