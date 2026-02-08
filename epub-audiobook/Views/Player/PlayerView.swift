@@ -118,11 +118,10 @@ struct PlayerView: View {
     private var sentenceSection: some View {
         Group {
             if let sentence = coordinator.currentSentenceText {
-                Text(sentence)
-                    .font(.body)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-                    .frame(minHeight: 80)
+                HighlightedTextView(
+                    text: sentence,
+                    highlightRange: coordinator.currentWordRange
+                )
             } else {
                 Text("Ready to play")
                     .font(.body)

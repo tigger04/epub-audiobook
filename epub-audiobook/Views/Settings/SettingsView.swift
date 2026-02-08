@@ -7,6 +7,7 @@ import AVFoundation
 struct SettingsView: View {
     @AppStorage("defaultSpeed") private var defaultSpeed: Double = 0.5
     @AppStorage("selectedVoiceIdentifier") private var selectedVoiceIdentifier: String = ""
+    @AppStorage("showTextHighlighting") private var showTextHighlighting = true
 
     @Environment(\.dismiss) private var dismiss
 
@@ -32,6 +33,7 @@ struct SettingsView: View {
         NavigationStack {
             Form {
                 speedSection
+                displaySection
                 voiceSection
             }
             .navigationTitle("Settings")
@@ -56,6 +58,12 @@ struct SettingsView: View {
                 }
             }
             .pickerStyle(.segmented)
+        }
+    }
+
+    private var displaySection: some View {
+        Section("Display") {
+            Toggle("Highlight Current Word", isOn: $showTextHighlighting)
         }
     }
 
