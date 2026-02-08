@@ -19,6 +19,28 @@ final class SystemTTSEngine: NSObject, TTSEngineProtocol {
         synthesizer = AVSpeechSynthesizer()
         super.init()
         synthesizer.delegate = self
+        observeInterruptions()
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    private func observeInterruptions() {
+        NotificationCenter.default.addObserver(
+            forName: AVAudioSession.interruptionNotification,
+            object: AVAudioSession.sharedInstance(),
+            queue: .main
+        ) { [weak self] _ in
+            // Interruption handling is done in the notification — for simplicity
+            // we just pause on any interruption from the main queue callback.
+            MainActor.assumeIsolated {
+                guard let self else { return }
+                if self.playbackState == .playing {
+                    self.pause()
+                }
+            }
+        }
     }
 
     func speak(_ utterance: Utterance) {

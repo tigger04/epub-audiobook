@@ -29,6 +29,7 @@ targets:
         GENERATE_INFOPLIST_FILE: "YES"
         SWIFT_VERSION: "6.0"
         PRODUCT_BUNDLE_IDENTIFIER: com.tigoss.epub-audiobook
+        INFOPLIST_KEY_UIBackgroundModes: audio
     dependencies:
       - package: ZIPFoundation
 
