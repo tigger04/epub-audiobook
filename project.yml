@@ -43,6 +43,7 @@ targets:
         SWIFT_VERSION: "6.0"
     dependencies:
       - target: epub-audiobook
+      - package: ZIPFoundation
 
   epub-audiobook-uitests:
     type: bundle.ui-testing
