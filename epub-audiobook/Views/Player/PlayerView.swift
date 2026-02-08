@@ -7,7 +7,9 @@ struct PlayerView: View {
     let coordinator: PlaybackCoordinator
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
     @State private var showingChapters = false
+    @State private var showingBookmarks = false
 
     var body: some View {
         NavigationStack {
@@ -41,10 +43,17 @@ struct PlayerView: View {
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        showingChapters = true
-                    } label: {
-                        Image(systemName: "list.bullet")
+                    HStack {
+                        Button {
+                            showingBookmarks = true
+                        } label: {
+                            Image(systemName: "bookmark")
+                        }
+                        Button {
+                            showingChapters = true
+                        } label: {
+                            Image(systemName: "list.bullet")
+                        }
                     }
                 }
             }
@@ -53,6 +62,16 @@ struct PlayerView: View {
                    let book = chapter.book,
                    let chapters = book.chapters?.sorted(by: { $0.spineIndex < $1.spineIndex }) {
                     ChapterListView(coordinator: coordinator, chapters: chapters)
+                }
+            }
+            .sheet(isPresented: $showingBookmarks) {
+                if let chapter = coordinator.currentChapter,
+                   let book = chapter.book {
+                    BookmarksListView(
+                        coordinator: coordinator,
+                        bookmarkService: BookmarkService(modelContext: modelContext),
+                        book: book
+                    )
                 }
             }
         }
