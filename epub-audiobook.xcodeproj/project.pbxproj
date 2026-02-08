@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CA49C166F4BA0095C209F6A /* ContainerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408ECEE95FB20B7BA9AD0E09 /* ContainerParser.swift */; };
+		133727FD9E86AA3440396AAF /* ContainerParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24E16EC9736DA742B42FD3 /* ContainerParserTests.swift */; };
 		693E65938974338DA2523A68 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 8832FC96FFCB76EF8B930233 /* ZIPFoundation */; };
 		CA6464A45233F906A6D0CE11 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F0969985E043113E89932 /* LibraryView.swift */; };
 		CD8E66AB72009273CB2CE5CF /* EpubAudiobookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48264C4082D04B62511FD22F /* EpubAudiobookTests.swift */; };
@@ -36,9 +38,11 @@
 		10DF3B4649DC79C9BADF5EE1 /* EpubAudiobookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpubAudiobookApp.swift; sourceTree = "<group>"; };
 		156F0969985E043113E89932 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		37250945424EEEA610FE1906 /* epub-audiobook-tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "epub-audiobook-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		408ECEE95FB20B7BA9AD0E09 /* ContainerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerParser.swift; sourceTree = "<group>"; };
 		48264C4082D04B62511FD22F /* EpubAudiobookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpubAudiobookTests.swift; sourceTree = "<group>"; };
 		A19BE7FFA74921C7A2331BA3 /* epub-audiobook-uitests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "epub-audiobook-uitests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D81A66A9FB7865F503E664 /* epub-audiobook.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "epub-audiobook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF24E16EC9736DA742B42FD3 /* ContainerParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				48264C4082D04B62511FD22F /* EpubAudiobookTests.swift */,
+				A2BB713DC9EA87A9887012D2 /* EPUBParser */,
 			);
 			path = "epub-audiobook-tests";
 			sourceTree = "<group>";
@@ -85,9 +90,18 @@
 			isa = PBXGroup;
 			children = (
 				DF4AB5071108D4288A375210 /* App */,
+				82240FD8727EAE7B4C157000 /* EPUBParser */,
 				931538929B4D7563F0749981 /* Views */,
 			);
 			path = "epub-audiobook";
+			sourceTree = "<group>";
+		};
+		82240FD8727EAE7B4C157000 /* EPUBParser */ = {
+			isa = PBXGroup;
+			children = (
+				408ECEE95FB20B7BA9AD0E09 /* ContainerParser.swift */,
+			);
+			path = EPUBParser;
 			sourceTree = "<group>";
 		};
 		865468B1CB999BF8E218A26E /* Library */ = {
@@ -104,6 +118,14 @@
 				865468B1CB999BF8E218A26E /* Library */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A2BB713DC9EA87A9887012D2 /* EPUBParser */ = {
+			isa = PBXGroup;
+			children = (
+				DF24E16EC9736DA742B42FD3 /* ContainerParserTests.swift */,
+			);
+			path = EPUBParser;
 			sourceTree = "<group>";
 		};
 		D098B9FA77F9B68BC46A6958 /* epub-audiobook-uitests */ = {
@@ -231,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				133727FD9E86AA3440396AAF /* ContainerParserTests.swift in Sources */,
 				CD8E66AB72009273CB2CE5CF /* EpubAudiobookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA49C166F4BA0095C209F6A /* ContainerParser.swift in Sources */,
 				E0D87D455E141588D54734FC /* EpubAudiobookApp.swift in Sources */,
 				CA6464A45233F906A6D0CE11 /* LibraryView.swift in Sources */,
 			);
