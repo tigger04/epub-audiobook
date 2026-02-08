@@ -16,6 +16,7 @@ final class PlaybackCoordinator: TTSEngineDelegate {
     private(set) var currentChapterIndex: Int = 0
     private(set) var currentSentenceIndex: Int = 0
     private(set) var currentWordRange: Range<String.Index>?
+    private(set) var rate: Float = 0.5
 
     // MARK: - Dependencies
 
@@ -119,6 +120,13 @@ final class PlaybackCoordinator: TTSEngineDelegate {
         case .loading:
             break
         }
+    }
+
+    // MARK: - Rate
+
+    func setRate(_ rate: Float) {
+        self.rate = rate
+        ttsEngine.setRate(rate)
     }
 
     // MARK: - Navigation
