@@ -17,6 +17,8 @@ struct LibraryView: View {
 
     @State private var coordinator: PlaybackCoordinator?
     @State private var showingSettings = false
+    @State private var showingResumePrompt = false
+    @State private var resumeBook: Book?
 
     private let columns = [
         GridItem(.adaptive(minimum: 150, maximum: 200), spacing: 16)
@@ -98,6 +100,23 @@ struct LibraryView: View {
             } message: {
                 Text(importError ?? "An unknown error occurred.")
             }
+            .alert("Continue Reading?", isPresented: $showingResumePrompt) {
+                Button("Resume") {
+                    if let book = resumeBook {
+                        openBook(book)
+                    }
+                }
+                Button("Library", role: .cancel) {
+                    resumeBook = nil
+                }
+            } message: {
+                if let book = resumeBook {
+                    Text("Continue reading \"\(book.title)\"?")
+                }
+            }
+            .onAppear {
+                checkForResume()
+            }
         }
     }
 
@@ -131,6 +150,32 @@ struct LibraryView: View {
             importError = error.localizedDescription
             showingError = true
         }
+    }
+
+    private func checkForResume() {
+        // Find the most recently updated reading position
+        var descriptor = FetchDescriptor<ReadingPosition>(
+            sortBy: [SortDescriptor(\ReadingPosition.lastUpdated, order: .reverse)]
+        )
+        descriptor.fetchLimit = 1
+
+        guard let positions = try? modelContext.fetch(descriptor),
+              let position = positions.first,
+              let book = position.book else { return }
+
+        // Don't offer resume if at the very start
+        guard position.chapterIndex > 0 || position.sentenceIndex > 0 else { return }
+
+        // Don't offer resume if at the end of the book
+        let chapters = (book.chapters ?? []).sorted { $0.spineIndex < $1.spineIndex }
+        if position.chapterIndex >= chapters.count - 1,
+           let lastChapter = chapters.last,
+           position.sentenceIndex >= lastChapter.sentences.count - 1 {
+            return
+        }
+
+        resumeBook = book
+        showingResumePrompt = true
     }
 
     private func deleteBook(_ book: Book) {
