@@ -23,6 +23,7 @@ test: ## Run unit and integration tests
 		-project "$(PROJECT)" \
 		-scheme "$(SCHEME)" \
 		-destination "$(DESTINATION)" \
+		-skip-testing:epub-audiobook-uitests \
 		-quiet
 
 test-ui: ## Run UI/E2E tests
