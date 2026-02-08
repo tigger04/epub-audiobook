@@ -10,6 +10,7 @@
 		0CA49C166F4BA0095C209F6A /* ContainerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408ECEE95FB20B7BA9AD0E09 /* ContainerParser.swift */; };
 		103E3209D83C7A3BCBD11758 /* XHTMLTextExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217937B46904680337F233AE /* XHTMLTextExtractor.swift */; };
 		133727FD9E86AA3440396AAF /* ContainerParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24E16EC9736DA742B42FD3 /* ContainerParserTests.swift */; };
+		16104F8A9D0F51C2D52F1C3C /* TTSEngineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4B3387788E5B2546EB891F /* TTSEngineProtocol.swift */; };
 		1784BA61AE39F8AFDFA5E55F /* OPFParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609802E47BF75D48BF09B8BC /* OPFParser.swift */; };
 		25C720FC73D0ED5A9F511378 /* EPUBParserIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F4543C6A47EA0081FF1883 /* EPUBParserIntegrationTests.swift */; };
 		2C49A8B1B16FCD7D9CBE7022 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD55B9B3FCC1556BEE5E6DEC /* Chapter.swift */; };
@@ -24,7 +25,9 @@
 		637E081E35A2AB9E1AC50BEF /* EPUBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3356C9905B59B77F24A887 /* EPUBParser.swift */; };
 		693E65938974338DA2523A68 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 8832FC96FFCB76EF8B930233 /* ZIPFoundation */; };
 		76A8D9B6C96F21C1FB61C314 /* BookImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663ABCF42DD0A0D248EDE766 /* BookImportService.swift */; };
+		A6C28E88360A9B74B50464B8 /* MockTTSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BAFF40F6F2667453458DFE /* MockTTSEngine.swift */; };
 		B321831F42FB3BD7B82DF610 /* OPFParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA75388DDC7456CBF64C9F /* OPFParserTests.swift */; };
+		B9937B4088C0BE75899F7E33 /* MockTTSEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6ED68EA284A630A2506A7 /* MockTTSEngineTests.swift */; };
 		B9CF53F97A010B042BB3EE36 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = AD1B97080E17DEE4A6E54088 /* ZIPFoundation */; };
 		C1479AC6097E63A4E107CFA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B3E600DC2024D14B5C79 /* Book.swift */; };
 		CA6464A45233F906A6D0CE11 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F0969985E043113E89932 /* LibraryView.swift */; };
@@ -66,9 +69,12 @@
 		609802E47BF75D48BF09B8BC /* OPFParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPFParser.swift; sourceTree = "<group>"; };
 		663ABCF42DD0A0D248EDE766 /* BookImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImportService.swift; sourceTree = "<group>"; };
 		6BFCF23B8C2C737C54C29625 /* BookImportServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImportServiceTests.swift; sourceTree = "<group>"; };
+		6F4B3387788E5B2546EB891F /* TTSEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSEngineProtocol.swift; sourceTree = "<group>"; };
+		83BAFF40F6F2667453458DFE /* MockTTSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTTSEngine.swift; sourceTree = "<group>"; };
 		921D9FADBAFEE611F4340D65 /* BookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
 		A19BE7FFA74921C7A2331BA3 /* epub-audiobook-uitests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "epub-audiobook-uitests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D81A66A9FB7865F503E664 /* epub-audiobook.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "epub-audiobook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8F6ED68EA284A630A2506A7 /* MockTTSEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTTSEngineTests.swift; sourceTree = "<group>"; };
 		BB3356C9905B59B77F24A887 /* EPUBParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBParser.swift; sourceTree = "<group>"; };
 		BDEA75388DDC7456CBF64C9F /* OPFParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPFParserTests.swift; sourceTree = "<group>"; };
 		CD55B9B3FCC1556BEE5E6DEC /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 				A2BB713DC9EA87A9887012D2 /* EPUBParser */,
 				36737C82ECA8AC4400C1DAE2 /* Models */,
 				0FAA143D7C80DA72893158B0 /* Services */,
+				951467768FAAD47AB9D74DBB /* TTSEngine */,
 			);
 			path = "epub-audiobook-tests";
 			sourceTree = "<group>";
@@ -171,9 +178,19 @@
 				82240FD8727EAE7B4C157000 /* EPUBParser */,
 				EAED8A2B7C624BEE7EE736EF /* Models */,
 				20D0455EF0B3EBD282D9E53E /* Services */,
+				5659CF130D6017C335326E1A /* TTSEngine */,
 				931538929B4D7563F0749981 /* Views */,
 			);
 			path = "epub-audiobook";
+			sourceTree = "<group>";
+		};
+		5659CF130D6017C335326E1A /* TTSEngine */ = {
+			isa = PBXGroup;
+			children = (
+				83BAFF40F6F2667453458DFE /* MockTTSEngine.swift */,
+				6F4B3387788E5B2546EB891F /* TTSEngineProtocol.swift */,
+			);
+			path = TTSEngine;
 			sourceTree = "<group>";
 		};
 		82240FD8727EAE7B4C157000 /* EPUBParser */ = {
@@ -202,6 +219,14 @@
 				865468B1CB999BF8E218A26E /* Library */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		951467768FAAD47AB9D74DBB /* TTSEngine */ = {
+			isa = PBXGroup;
+			children = (
+				A8F6ED68EA284A630A2506A7 /* MockTTSEngineTests.swift */,
+			);
+			path = TTSEngine;
 			sourceTree = "<group>";
 		};
 		A2BB713DC9EA87A9887012D2 /* EPUBParser */ = {
@@ -360,6 +385,7 @@
 				133727FD9E86AA3440396AAF /* ContainerParserTests.swift in Sources */,
 				25C720FC73D0ED5A9F511378 /* EPUBParserIntegrationTests.swift in Sources */,
 				CD8E66AB72009273CB2CE5CF /* EpubAudiobookTests.swift in Sources */,
+				B9937B4088C0BE75899F7E33 /* MockTTSEngineTests.swift in Sources */,
 				B321831F42FB3BD7B82DF610 /* OPFParserTests.swift in Sources */,
 				4F5C4DDE24A2A14E5EDE103C /* TOCParserTests.swift in Sources */,
 				34C64330D13C29C13AAA51B0 /* XHTMLTextExtractorTests.swift in Sources */,
@@ -379,10 +405,12 @@
 				E0D87D455E141588D54734FC /* EpubAudiobookApp.swift in Sources */,
 				CA6464A45233F906A6D0CE11 /* LibraryView.swift in Sources */,
 				561E2D65651E5560586FF0B6 /* MigrationPlan.swift in Sources */,
+				A6C28E88360A9B74B50464B8 /* MockTTSEngine.swift in Sources */,
 				1784BA61AE39F8AFDFA5E55F /* OPFParser.swift in Sources */,
 				4039071F6DE8161F5826182D /* ReadingPosition.swift in Sources */,
 				D5A36D05D51A80C1C14BDC72 /* SchemaV1.swift in Sources */,
 				3760C835AEDA0B7E3AD41BE9 /* TOCParser.swift in Sources */,
+				16104F8A9D0F51C2D52F1C3C /* TTSEngineProtocol.swift in Sources */,
 				103E3209D83C7A3BCBD11758 /* XHTMLTextExtractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
