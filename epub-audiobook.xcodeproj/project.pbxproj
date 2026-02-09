@@ -422,7 +422,7 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					1CA9CEC40927D68ADE9F1136 = {
-						DevelopmentTeam = J2AM5AANLB;
+						DevelopmentTeam = GLVW6FZ3DS;
 						ProvisioningStyle = Automatic;
 					};
 					9F4F547C7EEBF7E3BD48025A = {
@@ -663,7 +663,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J2AM5AANLB;
+				DEVELOPMENT_TEAM = GLVW6FZ3DS;
 				INFOPLIST_FILE = "epub-audiobook/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -738,7 +738,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J2AM5AANLB;
+				DEVELOPMENT_TEAM = GLVW6FZ3DS;
 				INFOPLIST_FILE = "epub-audiobook/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

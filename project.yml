@@ -41,7 +41,7 @@ targets:
         SWIFT_VERSION: "6.0"
         PRODUCT_BUNDLE_IDENTIFIER: com.tigoss.epub-audiobook
         CODE_SIGN_STYLE: Automatic
-        DEVELOPMENT_TEAM: J2AM5AANLB
+        DEVELOPMENT_TEAM: GLVW6FZ3DS
     dependencies:
       - package: ZIPFoundation
 

@@ -16,6 +16,7 @@ struct LibraryView: View {
     @State private var showingError = false
 
     @State private var coordinator: PlaybackCoordinator?
+    @State private var nowPlayingService: NowPlayingService?
     @State private var showingSettings = false
     @State private var showingResumePrompt = false
     @State private var resumeBook: Book?
@@ -132,13 +133,20 @@ struct LibraryView: View {
     // MARK: - Actions
 
     private func openBook(_ book: Book) {
+        let chapters = (book.chapters ?? []).sorted { $0.spineIndex < $1.spineIndex }
+
+        guard !chapters.isEmpty else {
+            importError = "This book has no readable chapters."
+            showingError = true
+            return
+        }
+
         let engine = SystemTTSEngine()
         let playbackCoordinator = PlaybackCoordinator(ttsEngine: engine, modelContext: modelContext)
         playbackCoordinator.loadBook(book)
 
         let nowPlaying = NowPlayingService(coordinator: playbackCoordinator)
         nowPlaying.configure()
-        let chapters = (book.chapters ?? []).sorted { $0.spineIndex < $1.spineIndex }
         nowPlaying.updateNowPlayingInfo(
             bookTitle: book.title,
             chapterTitle: chapters.first?.title ?? "Chapter 1",
@@ -147,6 +155,7 @@ struct LibraryView: View {
             coverImageData: book.coverImageData
         )
 
+        nowPlayingService = nowPlaying
         coordinator = playbackCoordinator
         selectedBook = book
         showingPlayer = true

@@ -69,10 +69,16 @@ final class PlaybackCoordinator: TTSEngineDelegate {
         self.book = book
         self.chapters = (book.chapters ?? []).sorted { $0.spineIndex < $1.spineIndex }
 
+        guard !chapters.isEmpty else {
+            currentChapterIndex = 0
+            currentSentenceIndex = 0
+            return
+        }
+
         if let position = book.readingPosition {
-            currentChapterIndex = min(position.chapterIndex, max(0, chapters.count - 1))
-            let sentenceCount = currentChapter?.sentences.count ?? 0
-            currentSentenceIndex = min(position.sentenceIndex, max(0, sentenceCount - 1))
+            currentChapterIndex = min(position.chapterIndex, chapters.count - 1)
+            let sentenceCount = chapters[currentChapterIndex].sentences.count
+            currentSentenceIndex = sentenceCount > 0 ? min(position.sentenceIndex, sentenceCount - 1) : 0
         } else {
             currentChapterIndex = 0
             currentSentenceIndex = 0
@@ -82,7 +88,7 @@ final class PlaybackCoordinator: TTSEngineDelegate {
     // MARK: - Playback Controls
 
     func play() {
-        guard !chapters.isEmpty else { return }
+        guard !chapters.isEmpty, currentSentenceText != nil else { return }
         guard playbackState == .idle || playbackState == .paused else { return }
 
         if playbackState == .paused {
